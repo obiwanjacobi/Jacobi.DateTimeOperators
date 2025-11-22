@@ -120,3 +120,5 @@ dt.To(out Years years, out Months months, out Days days);
 Multiple overloads are available per type with different combinations of parameter types.
 
 ---
+
+You may also enjoy the `Jacobi.ArrayOperators` package that lets you do 'array arithmetic' using operator extensions.
