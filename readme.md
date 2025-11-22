@@ -37,7 +37,7 @@ var dt1 = dt + 7.5.Minutes; // add 7 and a half minutes
 The library provides (value) types for every part that plays a role in manipulating date-time.
 
 | Type | Factory | Value | Description | 
-|------|---------|-------------|
+|------|---------|-------------|-------|
 | `Ticks` | `t`, `Ticks` | `long` | Represents time ticks (100 nanosecond units) |
 | `Microseconds` | `us`, `Microseconds` | `long`, `int` | Represents microseconds |
 | `MicrosecondsF` | `us`, `Microseconds` | `double` | Represents fractional microseconds |
