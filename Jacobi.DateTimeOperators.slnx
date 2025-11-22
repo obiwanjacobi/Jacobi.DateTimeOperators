@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="readme.md" />
+  </Folder>
   <Project Path="Jacobi.DateTimeOperators.Tests/Jacobi.DateTimeOperators.Tests.csproj" />
   <Project Path="Jacobi.DateTimeOperators/Jacobi.DateTimeOperators.csproj" Id="9cbad25f-b5c2-4b76-9a65-684e837f1081" />
 </Solution>

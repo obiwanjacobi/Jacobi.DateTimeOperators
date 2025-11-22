@@ -16,10 +16,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>DateTime;operators</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/obiwanjacobi/Jacobi.DateTimeOperators</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/obiwanjacobi/Jacobi.DateTimeOperators</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="readme.md">
+    <None Include="..\readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
