@@ -125,7 +125,7 @@ Multiple overloads are available per type with different combinations of paramet
 
 #### Deconstruct
 
-> `Deconstruct` methods with 2 and 3 parameters are not available for our type system. Us the `To` method instead.
+> `Deconstruct` methods with 2 and 3 parameters are not available for our type system. Use the `To` method instead.
 
 ```csharp
 var dt = new DateTime(2025, 11, 21, 14, 34, 45);
