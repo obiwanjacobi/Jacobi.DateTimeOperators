@@ -86,9 +86,11 @@ var ticks = 843710982.t       // t extension on long returns a Ticks instance
 
 > *) Some operators may introduce an additional value transformation to/from `TimeSpan`.
 
-Note that `TimeSpan` already has several overloaded operators for primitive times and arithmetic functions.
+Note that `TimeSpan` already has several overloaded operators for primitive types and arithmetic functions.
 
 ### Extension Methods
+
+#### From (static)
 
 All date-time types support `From` methods for construction with typed parameters:
 
@@ -103,12 +105,14 @@ var dt = DateTime.From(years, months, days);
 
 Multiple overloads are available per type with different combinations of parameter types.
 
-> Because the `DateTime` and related type already have a `Deconstruct` implementation, it could not be extended. Instead we've renamed the method to `To`.
+#### To
+
+> Because the `DateTime` and related type already have a `Deconstruct` implementation with 2 and 3 parameters (and for `TimeOnly` even more), we could not use extensions with the same number of parameters. Instead we've renamed these methods to `To`.
 
 All date-time types support `T` methods for deconstructing with typed parameters:
 
 ```csharp
-var dt = DateTime.From(2025, 11, 21);
+var dt = new DateTime(2025, 11, 21);
 dt.To(out Years years, out Months months, out Days days);
 // years => 2025
 // months => 11
@@ -118,6 +122,21 @@ dt.To(out Years years, out Months months, out Days days);
 > The `To` extension method for `DateTimeOffset` returns the offset as a return value.
 
 Multiple overloads are available per type with different combinations of parameter types.
+
+#### Deconstruct
+
+> `Deconstruct` methods with 2 and 3 parameters are not available for our type system. Us the `To` method instead.
+
+```csharp
+var dt = new DateTime(2025, 11, 21, 14, 34, 45);
+(Years years, Months months, Days days, Hours hours, Minutes minutes, Seconds seconds) = dt;
+// years => 2025
+// months => 11
+// days => 21
+// hours => 14
+// minutes => 34
+// seconds => 45
+```
 
 ---
 

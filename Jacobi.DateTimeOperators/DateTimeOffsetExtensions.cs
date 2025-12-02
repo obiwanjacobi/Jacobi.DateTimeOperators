@@ -2,6 +2,12 @@
 
 public static class DateTimeOffsetExtensions
 {
+    public static void Deconstruct(this DateTimeOffset dateTime, out Years years, out Months months, out Days days, out Hours hours, out Minutes minutes, out Seconds seconds)
+        => To(dateTime, out years, out months, out days, out hours, out minutes, out seconds);
+    public static void Deconstruct(this DateTimeOffset dateTime, out Years years, out Months months, out Days days, out Hours hours, out Minutes minutes, out Seconds seconds, out Milliseconds milliseconds, out Microseconds microseconds)
+        => To(dateTime, out years, out months, out days, out hours, out minutes, out seconds, out milliseconds, out microseconds);
+
+
     extension(DateTimeOffset dateTime)
     {
         public TimeSpan To(out Years years, out Months months, out Days days)

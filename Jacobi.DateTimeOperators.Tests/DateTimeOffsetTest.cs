@@ -358,4 +358,31 @@ public class DateTimeOffsetTest
         Assert.Equal(567, microseconds.Value);
         Assert.Equal(Offset, offset);
     }
+
+    [Fact]
+    public void DeconstructYMDHMS()
+    {
+        var dt = new DateTimeOffset(2025, 11, 15, 13, 23, 45, Offset);
+        (Years years, Months months, Days days, Hours hours, Minutes minutes, Seconds seconds) = dt;
+        Assert.Equal(2025, years.Value);
+        Assert.Equal(11, months.Value);
+        Assert.Equal(15, days.Value);
+        Assert.Equal(13, hours.Value);
+        Assert.Equal(23, minutes.Value);
+        Assert.Equal(45, seconds.Value);
+    }
+    [Fact]
+    public void DeconstructYMDHMSmsus()
+    {
+        var dt = new DateTimeOffset(2025, 11, 15, 13, 23, 45, 345, 567, Offset);
+        (Years years, Months months, Days days, Hours hours, Minutes minutes, Seconds seconds, Milliseconds milliseconds, Microseconds microseconds) = dt;
+        Assert.Equal(2025, years.Value);
+        Assert.Equal(11, months.Value);
+        Assert.Equal(15, days.Value);
+        Assert.Equal(13, hours.Value);
+        Assert.Equal(23, minutes.Value);
+        Assert.Equal(45, seconds.Value);
+        Assert.Equal(345, milliseconds.Value);
+        Assert.Equal(567, microseconds.Value);
+    }
 }
